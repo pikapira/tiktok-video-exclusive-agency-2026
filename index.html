@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- FAUX APERÇU (WhatsApp, Discord, Messenger) -->
-  <meta property="og:title" content=" COMO CRIAR AGENCIA TIKTOK " />
-  <meta property="og:description" content="assista ate ao fim..." />
-  <meta property="og:image" content="miniature.jpg" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="COMO CRIAR AGENCIA TIKTOK" />
+  <meta property="og:description" content="Assista até ao fim..." />
+  <meta property="og:image" content="https://pikapira.github.io/tiktok-video-exclusive-agency-2026/miniature.jpg" />
+  <meta property="og:url" content="https://pikapira.github.io/tiktok-video-exclusive-agency-2026/" />
+  <meta property="og:type" content="video.other" />
 
-  <title>Vidéo</title>
+  <title>COMO CRIAR AGENCIA TIKTOK</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html { width: 100%; height: 100%; background: #000; overflow: hidden; font-family: sans-serif; }
@@ -30,7 +31,7 @@
       content: ""; border-style: solid; border-width: 14px 0 14px 24px;
       border-color: transparent transparent transparent #fff; margin-left: 5px;
     }
-    video { width: 100%; height: 100%; object-fit: contain; display: none; }
+    video { width: 100vw; height: 100vh; object-fit: cover; display: none; }
   </style>
 </head>
 <body>
@@ -39,16 +40,26 @@
     <div class="play-btn"></div>
   </div>
 
-  <video id="prank" src="video.mp4" playsinline controls></video>
+  <video id="prank" src="video.mp4" playsinline></video>
 
   <script>
     function lancerPrank() {
       const cover = document.getElementById('cover');
       const v = document.getElementById('prank');
+      
       cover.style.display = 'none';
       v.style.display = 'block';
       v.muted = false;
       v.volume = 1.0;
+
+      if (v.requestFullscreen) {
+        v.requestFullscreen().catch(() => {});
+      } else if (v.webkitRequestFullscreen) {
+        v.webkitRequestFullscreen();
+      } else if (v.webkitEnterFullscreen) {
+        v.webkitEnterFullscreen();
+      }
+
       v.play();
     }
   </script>
